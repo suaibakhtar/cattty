@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #020617, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 360px;
+      background: rgba(2,6,23,0.9);
+      padding: 28px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    }
+
+    input, button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      margin-top: 12px;
+    }
+
+    button {
+      background: #22c55e;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #msg {
+      margin-top: 10px;
+      color: #f87171;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h2>Private 🔒</h2>
+    <p>Enter password to continue</p>
+
+    <input type="password" id="pass" placeholder="Password">
+    <button onclick="check()">Continue</button>
+
+    <div id="msg"></div>
+  </div>
+
+  <script>
+    function check() {
+      const password = "catty0202"; // 🔑 change if needed
+      const input = document.getElementById("pass").value;
+
+      if (input === password) {
+        window.location.href = "menu.html";
+      } else {
+        document.getElementById("msg").innerText = "Wrong password";
+      }
+    }
+  </script>
+
+</body>
+</html>
